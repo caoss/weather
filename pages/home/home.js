@@ -145,7 +145,7 @@ p.onError(function(e) {
         i.getLocationMessage(r.locationCallBack), c.getImageUrlList(o), l();
     },
     musicClick: function() {
-        0 == y ? p.src ? p.play() : (p.title = "钓鱼天气合适吗？", p.coverImgUrl = h, p.src = m) : p.pause();
+        0 == y ? p.src ? p.play() : (p.title = "要不要去钓鱼？", p.coverImgUrl = h, p.src = m) : p.pause();
     },
     onReady: function() {
         console.log("监听页面初次渲染完成");
@@ -162,7 +162,7 @@ p.onError(function(e) {
         console.log("bgImageLoad", e);
     },
     onShareAppMessage: function(e) {
-        var t = "钓鱼天气合适吗？";
+        var t = "要不要去钓鱼？";
         return r.data.currentWeather && (t = r.data.currentWeather.basic.location + "  " + r.data.currentWeather.now.cond_txt + "  " + r.data.currentWeather.now.tmp + "°"), 
         {
             title: t,
