@@ -1,0 +1,14 @@
+{
+    "pages": [
+        "pages/home/home",
+        "pages/city/city",
+        "pages/aboutme/aboutme",
+        "pages/feedback/feedback"
+    ],
+    "window": {
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "哎呦天气",
+        "navigationBarTextStyle": "black"
+    }
+}

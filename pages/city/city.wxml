@@ -1,0 +1,23 @@
+<view class="rootView_container">
+    <view class="search_container">
+        <input bindinput="searchListener" class="search_edit" focus="true" maxlength="20" placeholder="中文"></input>
+    </view>
+    <scroll-view scrollY class="list_container" wx:if="{{showListView}}">
+        <view bindtap="searchItemLcick" class="list_item_container" data-index="{{item}}" wx:for="{{citylist}}" wx:key="*this">
+            <text class="city_text">{{item.name}}</text>
+            <text class="city_parent_text">{{item.parent}}</text>
+        </view>
+    </scroll-view>
+    <view class="location_history_container" wx:if="{{!showListView}}">
+        <view bindtap="locationclick" class="location_container" wx:if="{{locationCityModel}}">
+            <image class="location_icon" src="../../resource/image/icon_location.png"></image>
+            <text class="city_text">{{locationCityModel.displayName}}</text>
+        </view>
+        <view class="search_history_container" wx:if="{{historyCites}}">
+            <image class="history_icon" mode="aspectFit" src="../../resource/image/trace.png"></image>
+            <view class="search_history_container2">
+                <text bindtap="historyItemLcick" class="search_history_item" data-index="{{item}}" wx:for="{{historyCites}}" wx:key="*this">{{item.displayName}}</text>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,4 @@
+module.exports = {
+    USER_ID: "HE1804051938111441",
+    AUTH_KEY: "800642b623004a2e998b3aeb0606902f"
+};

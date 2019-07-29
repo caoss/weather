@@ -1,0 +1,16 @@
+<view class="rootView">
+    <view class="introduction">
+        <image class="me_icon" mode="aspectFit" src="../../resource/image/me.jpeg"></image>
+        <view class="introduction_">
+            <text class="name_text">GEFUFENG</text>
+            <text class="date_text">2018.4.14</text>
+        </view>
+    </view>
+    <view class="introduction">
+        <view class="colum_line"></view>
+        <view class="introduction_2">
+            <text class="saying_text">There are only two hard things in Computer Science : cache invalidation and naming things</text>
+            <text class="author_text">-- Phil Karlton</text>
+        </view>
+    </view>
+</view>

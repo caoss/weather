@@ -1,0 +1,84 @@
+<import src="../../component/toast/toast.wxml"></import>
+<template is="toast" data="{{..._toast_}}"></template>
+
+<view>
+    <view class="image_parent">
+        <image bindload="bgImageLoad" class="image_bg" lazyLoad="{{true}}" src="{{bgIcon}}"></image>
+        <view class="image_bg2"></view>
+        <view class="image_content">
+            <view bindtap="jumpCityPage" class="content_nav_bar">
+                <block wx:if="{{currentCityModel}}">
+                    <view class="location_container">
+                        <image class="location_icon" src="../../resource/image/location.png"></image>
+                        <text class="location_text">{{currentCityModel.displayName}}</text>
+                    </view>
+                    <view class="location_text2">点击切换位置</view>
+                    <text class="current_date">{{'今天是'+currentDate}}</text>
+                </block>
+            </view>
+            <view class="current_weather_container">
+                <block wx:if="{{currentWeather}}">
+                    <text class="current_temperature" decode="{{true}}">&nbsp;{{currentWeather.currentTemperature+'°'}}</text>
+                    <view class="current_cond_container">
+                        <text class="current_cond_txt">{{currentWeather.weather}}/气压{{hourlyWeather&&hourlyWeather.hourly&&hourlyWeather.hourly[0]['pres']  }}</text>
+                        <image class="current_cond_icon" src="{{currentWeather.weatherIcon}}"></image>
+                    </view>
+                    <text class="current_wind">{{currentWeather.wind}}</text>
+                </block>
+            </view>
+            <scroll-view class="hourly_container" scrollX="true">
+                <view class="hourly_item_container" wx:for="{{hourlyWeather.hourly}}" wx:key="*this">
+                    <view class="hourly_item_container2">
+                        <text class="hourly_item_time">{{item.time}}</text>
+                        <image class="hourly_item_temperature_icon1" src="{{'../../resource/cond_icon/'+item.cond_code+'.png'}}"></image>
+                        <text class="hourly_item_temperature">{{item.tmp+'°'}}</text>
+                        <text class="hourly_item_wind">{{item.wind_dir+item.wind_sc+'级'}}</text>
+
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+         <!--
+        <image bindtap="createPicture" class="picture" src="../../resource/image/picture.png"></image>
+        <image bindtap="feedback" class="feedback" mode="aspectFit" src="../../resource/image/feedback.png"></image>
+        <image bindtap="clickScenery" class="scenery" mode="aspectFit" src="../../resource/image/scenery.png" wx:if="{{imageUrlList}}"></image>
+
+
+        <!--
+        <image bindtap="newtodo" class="newtodo" mode="aspectFit" src="../../resource/image/todo.png"></image>
+        <image bindtap="musicClick" class="music" mode="aspectFit" src="{{musicIcon}}" wx:if="{{musicShow}}"></image>
+        -->
+
+    </view>
+    <view class="forecast_container1">
+        <view class="forecast_item_container" wx:for="{{forecastWeather1}}" wx:key="*this">
+            <text class="forecast_item_date">{{item.optimizedDate}}</text>
+            <text class="forecast_item_date_">{{item.finalDate}}</text>
+            <image class="hourly_item_temperature_icon1" src="{{'../../resource/cond_icon/'+item.cond_code_d+'.png'}}"></image>
+        </view>
+    </view>
+    <view class="forecast_container_flow">
+        <canvas canvasId="forcastCanvas" class="forecast_canvas"></canvas>
+    </view>
+    <view class="forecast_container2">
+        <view class="forecast_item_container" wx:for="{{forecastWeather2}}" wx:key="*this">
+            <image class="hourly_item_temperature_icon2" src="{{'../../resource/cond_icon/'+item.cond_code_n+'.png'}}"></image>
+            <text class="forecast_item_wind">{{item.wind_dir}}</text>
+            <text class="forecast_item_wind_">{{item.wind_sc+'级'}}</text>
+        </view>
+    </view>
+    <view class="lifestyle_container">
+        <view class="lifestyle_container2" wx:for="{{lifestyle}}" wx:for-item="lifestyleRow" wx:key="lifestyleRow">
+            <view bindtap="clickLifeStyle" class="lifestyle_item_container" data-index="{{item}}" wx:for="{{lifestyleRow}}" wx:key="item">
+                <image class="lifestyle_item_icon" src="{{item.lifeIcon}}"></image>
+                <text class="lifestyle_item_brf">{{item.brf}}</text>
+                <text class="lifestyle_item_name">{{item.lefeStyleName}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="line"></view>
+    <view class="about_me">
+        <image class="logo" mode="aspectFit" src="../../resource/image/logo.jpg"></image>
+    </view>
+</view>
+<canvas canvasId="qrCanvas" hidden="{{canvasHide}}" style="width: 100%; height: 300px; background-color:#ddd"></canvas>

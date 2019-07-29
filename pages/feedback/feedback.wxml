@@ -1,0 +1,16 @@
+<view class="rootView_container">
+    <textarea bindinput="inputListener" class="feedback_edit" maxlength="50" placeholder="这一刻的想法..."></textarea>
+    <view class="choose_image_container">
+        <image bindtap="previewImage" class="choose_default_image" mode="aspectFit" src="{{image}}" wx:if="{{image}}"></image>
+        <image bindtap="chooseImage" class="choose_default_image" mode="aspectFit" src="../../resource/image/choose_pic.png" wx:if="{{showChoose}}"></image>
+        <image bindtap="deleteImage" class="choose_default_image" mode="aspectFit" src="../../resource/image/delete_pic.png" wx:if="{{showDelete}}"></image>
+    </view>
+    <text class="feedback_hint">你的建议与反馈作者看到后会第一时间答复</text>
+    <button bindtap="submitContent" class="submit_button" disabled="{{disabled}}" loading="{{loading}}" plain="{{false}}" size="default" type="default"> 提交 </button>
+    <view class="reply_container" wx:if="{{replys}}">
+        <view class="reply_item_container" wx:for="{{replys}}" wx:key="*this">
+            <text class="feedback_content"> {{'问：'+item.content}}</text>
+            <text class="reply_content"> {{'答：'+item.reply}} </text>
+        </view>
+    </view>
+</view>
