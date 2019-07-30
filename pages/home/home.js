@@ -15,7 +15,7 @@ function a(e) {
         var t = d.windowWidth, n = wx.createCanvasContext("qrCanvas"), o = f.getCurrentCityModel().displayName;
         if (n.drawImage(a, 0, 0, t, 300), n.setFillStyle("white"), n.fillRect(0, 240, t, 60), 
         n.drawImage("../../resource/image/weather_qr.jpg", 5, 243, 55, 55), n.moveTo(t / 2, 20), 
-        n.setTextAlign("center"), n.setFillStyle("#333"), n.setFontSize(15), n.fillText("哎呦天气，不错哦！", t / 2, 275), 
+        n.setTextAlign("center"), n.setFillStyle("#333"), n.setFontSize(15), n.fillText("天气，不错哦！", t / 2, 275), 
         n.setFillStyle("white"), o && (n.setFontSize(13), n.fillText(o, t / 2, 30)), e.data.currentWeather) {
             var l = " " + e.data.currentWeather.currentTemperature + "°", r = e.data.currentWeather.weather, i = e.data.currentWeather.wind;
             l && (n.setFontSize(50), n.fillText(l, t / 2, 120)), r && (n.setFontSize(15), n.fillText(r, t / 2, 160)), 
