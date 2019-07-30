@@ -3,10 +3,8 @@
 
 <view>
     <view class="image_parent">
-    <!--
         <image bindload="bgImageLoad" class="image_bg" lazyLoad="{{true}}" src="{{bgIcon}}"></image>
-    -->
-        <image bindload="bgImageLoad" class="image_bg" lazyLoad="{{true}}" src="{{'../../resource/image/timg.jpg'}}"></image>
+<!--       <image bindload="bgImageLoad" class="image_bg" lazyLoad="{{true}}" src="{{'../../resource/image/timg.jpg'}}"></image>--> 
         <view class="image_bg2"></view>
         <view class="image_content">
             <view bindtap="jumpCityPage" class="content_nav_bar">
