@@ -10,5 +10,10 @@
         "navigationBarBackgroundColor": "#fff",
         "navigationBarTitleText": "择天游钓",
         "navigationBarTextStyle": "black"
+    },
+    "permission":{
+        "scope.userLocation":{
+            "desc":"你的信息位置用于小程序位置接口的效果展示"
+        }
     }
 }

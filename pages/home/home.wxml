@@ -17,6 +17,7 @@
                     <text class="current_date">{{'今天是'+currentDate}}</text>
                 </block>
             </view>
+            
             <view class="current_weather_container">
                 <block wx:if="{{currentWeather}}">
                     <text class="current_temperature" decode="{{true}}">&nbsp;{{currentWeather.currentTemperature+'°'}}</text>
@@ -34,7 +35,6 @@
                         <image class="hourly_item_temperature_icon1" src="{{'../../resource/cond_icon/'+item.cond_code+'.png'}}"></image>
                         <text class="hourly_item_temperature">{{item.tmp+'°'}}</text>
                         <text class="hourly_item_wind">{{item.wind_dir+item.wind_sc+'级'}}</text>
-
                     </view>
                 </view>
             </scroll-view>
