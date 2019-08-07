@@ -18,14 +18,16 @@
                 </block>
             </view>
             
-            <view class="current_weather_container">
+            <view class="current_weather_container" >
                 <block wx:if="{{currentWeather}}">
                     <text class="current_temperature" decode="{{true}}">&nbsp;{{currentWeather.currentTemperature+'°'}}</text>
                     <view class="current_cond_container">
                         <text class="current_cond_txt">{{currentWeather.weather}}/气压{{hourlyWeather&&hourlyWeather.hourly&&hourlyWeather.hourly[0]['pres']  }}</text>
                         <image class="current_cond_icon" src="{{currentWeather.weatherIcon}}"></image>
                     </view>
+
                     <text class="current_wind">{{currentWeather.wind}}</text>
+
                 </block>
             </view>
             <scroll-view class="hourly_container" scrollX="true">
@@ -38,6 +40,10 @@
                     </view>
                 </view>
             </scroll-view>
+            <view class='mores' bindtap='_toHefg'>
+                <text class="current_wind2">查看更多天气信息</text>
+            </view>
+
         </view>
     </view>
 

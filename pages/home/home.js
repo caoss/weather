@@ -244,6 +244,11 @@ p.onError(function(e) {
             appId: "wxbd548891e96001b7"
         });
     },
+    _toHefg:function(){
+        wx.navigateTo({
+            url:"/pages/hefeng/aboutme",
+        })
+    },
     createPicture: function() {
         a(r);
     },

@@ -1,7 +1,7 @@
 {
     "pages": [
-        "pages/aboutme/aboutme",
         "pages/home/home",
+        "pages/hefeng/aboutme",
         "pages/city/city",
         "pages/feedback/feedback"
     ],

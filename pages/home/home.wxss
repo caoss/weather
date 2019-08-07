@@ -119,11 +119,21 @@
     background-color: #fff;
 }
 
-.current_wind {
-    margin-top: 110rpx;
+.current_wind{
+    margin-top: 80rpx;
     font-size: 35rpx;
     font-weight: 700;
     color: #fff;
+}
+.current_wind2 {
+    background: #fff;
+    padding: 5rpx 10rpx;
+    border-top-left-radius: 10rpx;
+    border-top-right-radius: 10rpx;
+    font-size: 20rpx;
+    font-weight: 500;
+    color:#2dc295;
+    margin-bottom: 10rpx;
 }
 
 .hourly_container {
@@ -350,4 +360,20 @@
 .forecast_canvas {
     width: 100%;
     height: 100%;
+}
+.hefeng{
+    position: absolute;
+    right: 0;
+    top: 20%;
+    width: 80rpx;
+    height: 80rpx;
+    background:#fff;
+    text-align: center;
+}
+.hefengImg{
+    width: 80rpx;
+}
+
+.mores{
+    text-align: center;
 }
