@@ -39,18 +39,8 @@
                 </view>
             </scroll-view>
         </view>
-         <!--
-        <image bindtap="createPicture" class="picture" src="../../resource/image/picture.png"></image>
-        <image bindtap="feedback" class="feedback" mode="aspectFit" src="../../resource/image/feedback.png"></image>
-        <image bindtap="clickScenery" class="scenery" mode="aspectFit" src="../../resource/image/scenery.png" wx:if="{{imageUrlList}}"></image>
-
-
-        <!--
-        <image bindtap="newtodo" class="newtodo" mode="aspectFit" src="../../resource/image/todo.png"></image>
-        <image bindtap="musicClick" class="music" mode="aspectFit" src="{{musicIcon}}" wx:if="{{musicShow}}"></image>
-        -->
-
     </view>
+
     <view class="forecast_container1">
         <view class="forecast_item_container" wx:for="{{forecastWeather1}}" wx:key="*this">
             <text class="forecast_item_date">{{item.optimizedDate}}</text>
@@ -58,6 +48,8 @@
             <image class="hourly_item_temperature_icon1" src="{{'../../resource/cond_icon/'+item.cond_code_d+'.png'}}"></image>
         </view>
     </view>
+
+
     <view class="forecast_container_flow">
         <canvas canvasId="forcastCanvas" class="forecast_canvas"></canvas>
     </view>
@@ -78,8 +70,11 @@
         </view>
     </view>
     <view class="line"></view>
+    
     <view class="about_me">
         <image class="logo" mode="aspectFit" src="../../resource/image/logo.jpg"></image>
     </view>
 </view>
 <canvas canvasId="qrCanvas" hidden="{{canvasHide}}" style="width: 100%; height: 300px; background-color:#ddd"></canvas>
+
+

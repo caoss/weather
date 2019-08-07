@@ -1,0 +1,3 @@
+<view class="rootView">
+    <web-view src="https://widget-page.heweather.net/h5/index.html?bg=1&md=0123456&lc=accu&key=011c4e0f90e64121b859779d4007b879"></web-view>  
+</view>

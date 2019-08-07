@@ -1,8 +1,8 @@
 {
     "pages": [
+        "pages/aboutme/aboutme",
         "pages/home/home",
         "pages/city/city",
-        "pages/aboutme/aboutme",
         "pages/feedback/feedback"
     ],
     "window": {
