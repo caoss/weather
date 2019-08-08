@@ -131,6 +131,7 @@ p.onError(function(e) {
         musicShow: !1
     },
     onLoad: function(e) {
+        this._getDY();
         r = this, new s.ToastPannel();
         var t = 2 * d.windowWidth, a = 2 * Math.round(d.windowHeight / 7 * 6), n = new Date().toLocaleDateString();
         h = "https://cn.bing.com/ImageResolution.aspx?w=" + t + "&h=" + a + "&t=" + n, r.setData({
@@ -219,6 +220,7 @@ p.onError(function(e) {
         }, 800);
     },
     lifeStyleCallBack: function(e) {
+        console.log( 'lifeStyleCallBack',e );
         var t = null, a = null;
         e.HeWeather6[0].lifestyle.forEach(function(e) {
             var t = e.type, a = g.lifeStyleJson[t], n = g.lifeStyleJsonIcon[t];
@@ -294,6 +296,22 @@ p.onError(function(e) {
     feedback: function() {
         wx.navigateTo({
             url: "../feedback/feedback"
+        });
+    },
+
+    _getDY(){
+        const defaultHeader = {
+            Accept: '*/*',
+            'Content-Type': 'application/json;charset=UTF-8',
+        };
+        wx.request({
+            url: 'https://widget-api.heweather.net/s6/plugin/h5?key=fa9116118ec3489bb847aee6573e8404&location=CN101190404&lang=cn',
+            header: defaultHeader,
+            success: (res) => {
+                console.log('resssss',res);
+            },
+            fail: (err) => {
+            }
         });
     }
 });

@@ -377,3 +377,18 @@
 .mores{
     text-align: center;
 }
+.dy_box{
+    padding: 50rpx;
+    color: #fff;
+    text-align: center;
+    background:#00BFFF;
+}   
+.dy_box_1{
+    margin-bottom: 30rpx;
+    font-size: 40rpx;
+}      
+.dy_box_2{
+    margin-bottom: 30rpx;
+    font-size: 30rpx;
+}      
+    

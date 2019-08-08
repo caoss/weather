@@ -37,6 +37,7 @@ module.exports = {
                 console.log(e.data), u(e.data);
             }
         });
+        //iifeStyle
         var w = e(g, a.LIFE_STYLE);
         wx.request({
             url: w,
