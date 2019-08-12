@@ -123,6 +123,8 @@ p.onError(function(e) {
         hourlyWeather: null,
         forecastWeather1: null,
         forecastWeather2: null,
+        fish_state:{},
+        fish_state2:'2weqr',
         lifestyle: null,
         currentDate: "星期" + "日一二三四五六".charAt(new Date().getDay()),
         canvasHide: !0,
@@ -162,14 +164,16 @@ p.onError(function(e) {
     bgImageLoad: function(e) {
         console.log("bgImageLoad", e);
     },
-    onShareAppMessage: function(e) {
-        var t = "要不要去钓鱼？";
-        return r.data.currentWeather && (t = r.data.currentWeather.basic.location + "  " + r.data.currentWeather.now.cond_txt + "  " + r.data.currentWeather.now.tmp + "°"), 
-        {
-            title: t,
-            path: "/pages/home/home"
-        };
+    onShareAppMessage() {
+
+        let title = this.data.fish_state && this.data.fish_state[['brf']] ?'今天钓鱼'+this.data.fish_state.brf:"要不要去钓鱼？";
+        // let title = "要不要去钓鱼？";
+        return {
+            title:title,
+        }
     },
+
+    
     onPullDownRefresh: function() {
         var e = f.getCurrentCityModel();
         e && (r.setData({
@@ -220,7 +224,12 @@ p.onError(function(e) {
         }, 800);
     },
     lifeStyleCallBack: function(e) {
-        console.log( 'lifeStyleCallBack',e );
+        if( e.HeWeather6[0]&& e.HeWeather6[0].lifestyle &&  e.HeWeather6[0].lifestyle[14]){
+            this.setData({
+                fish_state:e.HeWeather6[0].lifestyle[14]
+            })
+        }
+
         var t = null, a = null;
         e.HeWeather6[0].lifestyle.forEach(function(e) {
             var t = e.type, a = g.lifeStyleJson[t], n = g.lifeStyleJsonIcon[t];

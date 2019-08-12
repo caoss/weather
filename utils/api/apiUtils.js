@@ -15,6 +15,10 @@ module.exports = {
             location: s + "," + o,
             key: t.AUTH_KEY
         };
+        var g2 = {
+            location: s + "," + o,
+            key: t.AUTH_KEY2
+        };
         new n.BMapWX({
             ak: r.AK
         }).weather({
@@ -38,7 +42,8 @@ module.exports = {
             }
         });
         //iifeStyle
-        var w = e(g, a.LIFE_STYLE);
+        var w = e(g2, a.LIFE_STYLE);
+
         wx.request({
             url: w,
             success: function(e) {

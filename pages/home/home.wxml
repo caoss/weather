@@ -43,10 +43,13 @@
         </view>
     </view>
 
-    <view class='dy_box'>
-        <view class="dy_box_1">垂钓指数：</view>
-        <text class="dy_box_2">原因</text>
+    <view class='dy_box' wx:if="{{ fish_state }}" >
+        <view class="dy_box_1">垂钓指数：{{  fish_state.brf }}</view>
+        <view class="dy_box_2">
+            {{ fish_state.txt }}
+        </view>
     </view>
+
     <view class="forecast_container1">
         <view class="forecast_item_container" wx:for="{{forecastWeather1}}" wx:key="*this">
             <text class="forecast_item_date">{{item.optimizedDate}}</text>
