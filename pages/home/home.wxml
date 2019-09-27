@@ -80,7 +80,7 @@
     </view>
     <view class="line"></view>
     
-    <view class="about_me">
+    <view class="about_me" bindtap="feedback">
         <image class="logo" mode="aspectFit" src="../../resource/image/logo.jpg"></image>
     </view>
 </view>
