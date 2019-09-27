@@ -1,9 +1,9 @@
 {
     "pages": [
+        "pages/feedback/feedback",
         "pages/home/home",
         "pages/hefeng/aboutme",
-        "pages/city/city",
-        "pages/feedback/feedback"
+        "pages/city/city"
     ],
     "window": {
         "backgroundTextStyle": "dark",

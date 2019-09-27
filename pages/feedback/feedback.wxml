@@ -1,16 +1,33 @@
-<view class="rootView_container">
-    <textarea bindinput="inputListener" class="feedback_edit" maxlength="50" placeholder="这一刻的想法..."></textarea>
-    <view class="choose_image_container">
-        <image bindtap="previewImage" class="choose_default_image" mode="aspectFit" src="{{image}}" wx:if="{{image}}"></image>
-        <image bindtap="chooseImage" class="choose_default_image" mode="aspectFit" src="../../resource/image/choose_pic.png" wx:if="{{showChoose}}"></image>
-        <image bindtap="deleteImage" class="choose_default_image" mode="aspectFit" src="../../resource/image/delete_pic.png" wx:if="{{showDelete}}"></image>
+<view class="action">
+    <view class="url_input_wrap">
+        <input bindinput="bindKeyInput" class="url_input" placeholder="请输入视频地址" value="{{url}}"></input>
+        <image bindtap="clear" class="icon" src="../../img/home_icon_clear@3x.png"></image>
     </view>
-    <text class="feedback_hint">你的建议与反馈作者看到后会第一时间答复</text>
-    <button bindtap="submitContent" class="submit_button" disabled="{{disabled}}" loading="{{loading}}" plain="{{false}}" size="default" type="default"> 提交 </button>
-    <view class="reply_container" wx:if="{{replys}}">
-        <view class="reply_item_container" wx:for="{{replys}}" wx:key="*this">
-            <text class="feedback_content"> {{'问：'+item.content}}</text>
-            <text class="reply_content"> {{'答：'+item.reply}} </text>
+    <view bindtap="parser" class="search_btn">解析视频</view>
+</view>
+<block wx:if="{{result}}">
+    <view class="videobox">
+        <video controls danmuBtn enableDanmu id="myVideo" src="{{video_url}}"></video>
+    </view>
+    <view bindtap="down" class="download_btn">保存视频</view>
+</block>
+<view class="imgbox" wx:else>
+    <image class="img_placeholder" mode="widthFix" src="../../img/empty_icon_home.png"></image>
+</view>
+<view class="tips">视频归平台及作者所有，本应用不存储任何视频和图片</view>
+<ad bindclose="adclose" binderror="aderror" bindload="adload" style="" unitId="adunit-455e339c0127805e"></ad>
+<view class="dialog" wx:if="{{showDialog}}">
+    <view class="d_body">
+        <view class="d_conent">
+            <view class="d_title">使用帮助</view>
+            <view class="d_text">检测到视频地址</view>
+        </view>
+        <view class="dialog_btn">
+            <view bindtap="closeDialog" class="cancle">取消</view>
+            <view bindtap="clip">一键黏贴</view>
         </view>
     </view>
+
+    
 </view>
+<login bind:hide="hidepop" wx:if="{{showpop}}"></login>
