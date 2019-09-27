@@ -231,10 +231,15 @@ Page({
 
     downloadStat: function() {
         var t = this;
+        console.log("https://download.yijianqushuiyin.com/downloadvideo/" + this.data.id + ".mp4");
+        wx.showLoading();
         wx.downloadFile({
-            url:this.data.original_url,
+            // url:this.data.original_url+'.mp4',
+            url:"https://download.yijianqushuiyin.com/downloadvideo/" + this.data.id + ".mp4",
+            header:{"Content-Type":'videompeg4'},
             success: function(res) {
               console.log(res);
+              wx.hideLoading();
               wx.saveVideoToPhotosAlbum({
                 filePath: res.tempFilePath,
                 success: function(data) {
